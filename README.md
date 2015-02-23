@@ -1,7 +1,10 @@
 my dummy rails project
 
 ## Feature
-- Users can receive messages from a cow
+- Everyone can receive messages from a cow
+- You ask us to poke the cow,
+  and when the job is done (backgrou job)
+  you get the message (live page update)
 
 ## Setup
 required packages: cowsay, fortune
