@@ -10,3 +10,5 @@ required packages: cowsay, fortune
 # ubuntu
 sudo apt-get install -y fortune-mod cowsay
 ```
+
+run `rake jobs:work`
