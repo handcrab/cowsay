@@ -47,5 +47,8 @@ class MessagesController < ApplicationController
     rescue IOError
     ensure
       response.stream.close
+      # TODO
+      # Rake::Task['jobs:clear'].invoke
+      `bundle exec rake jobs:clear` # Delayed::Job.count
   end
 end
