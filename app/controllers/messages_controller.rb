@@ -17,7 +17,7 @@ class MessagesController < ApplicationController
 
   # POST
   def massage_cow
-    MassageCowJob.perform_later each_minute: 0.2
+    MassageCowJob.perform_later #each_minute: 0.2
     redirect_to root_path, notice: 'Beginning to massage the cow...'
   end
 
