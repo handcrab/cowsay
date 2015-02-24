@@ -1,4 +1,6 @@
 %h1 Recent messages from the Cow
-= link_to 'Poke the cow', messages_poke_path, method: :post
+= link_to 'Poke the cow', poke_cow_path, method: :post
+%br
+= link_to 'Massage the cow', massage_cow_path, method: :post
 %p.messages
   = render @messages

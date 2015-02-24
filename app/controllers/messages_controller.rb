@@ -6,6 +6,7 @@ class MessagesController < ApplicationController
     @messages = Message.all.order created_at: :desc
   end
 
+  # POST
   def poke_cow
     # CowsayJob.set(wait_until: (Time.now + 1.minute)).perform_later
     CowsayJob.perform_later
@@ -13,6 +14,12 @@ class MessagesController < ApplicationController
     # Rails.queue.push(CowsayJob.new(user))
     redirect_to root_path, notice: 'Cow at work...'
   end  
+
+  # POST
+  def massage_cow
+    MassageCowJob.perform_later
+    redirect_to root_path, notice: 'Beginning to massage the cow...'
+  end
 
   def broadcasting
     response.headers['Content-Type'] = 'text/event-stream'
@@ -39,6 +46,6 @@ class MessagesController < ApplicationController
     # render nothing: true
     rescue IOError
     ensure
-    response.stream.close
+      response.stream.close
   end
 end

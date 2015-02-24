@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   root 'messages#index'
-  post 'messages/poke' => 'messages#poke_cow'
-  get 'messages/broadcasting' => 'messages#broadcasting'
+  post 'messages/poke_cow' => 'messages#poke_cow', as: 'poke_cow'
+  post 'messages/massage_cow' => 'messages#massage_cow', as: 'massage_cow'
+  get  'messages/broadcasting' => 'messages#broadcasting'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
