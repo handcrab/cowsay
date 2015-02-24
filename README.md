@@ -22,4 +22,5 @@ required packages: cowsay, fortune
 sudo apt-get install -y fortune-mod cowsay
 ```
 
-run `rake jobs:work`
+## Run
+use `foreman start`
