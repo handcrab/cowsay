@@ -10,9 +10,9 @@ my dummy rails project #learning
   every 1 minute (_recurring job_)
 
 TODO: 
-- Sidekiq / Sidetiq::Schedulable
+- ActiveJob::Scheduler: Sidekiq / Sidetiq::Schedulable
 - clear tasks when connection is closed (not all but only this user tasks)
-
+-  ??? ActionController::Live::ClientDisconnected
 
 ## Setup
 required packages: cowsay, fortune

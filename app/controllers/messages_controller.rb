@@ -17,7 +17,7 @@ class MessagesController < ApplicationController
 
   # POST
   def massage_cow
-    MassageCowJob.perform_later
+    MassageCowJob.perform_later each_minute: 0.2
     redirect_to root_path, notice: 'Beginning to massage the cow...'
   end
 
@@ -49,6 +49,6 @@ class MessagesController < ApplicationController
       response.stream.close
       # TODO
       # Rake::Task['jobs:clear'].invoke
-      `bundle exec rake jobs:clear` # Delayed::Job.count
+      `bundle exec rake jobs:clear` # Delayed::Job.count      
   end
 end

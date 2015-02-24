@@ -1,13 +1,13 @@
 class MassageCowJob < ActiveJob::Base
   queue_as :default
-  RUN_EVERY = 1.minute  
+  RUN_EVERY = 1 # minute    
   # after_perform do |job|
-  #   # invoke another job at your time of choice 
+  #   self.class.perform_later wait: 30.seconds
   # end
-
-  def perform args={run_every: RUN_EVERY}    
-    # call other job
+  def perform args={each_minute: RUN_EVERY}
+    # call an other job
     CowsayJob.perform_later # topic: 'ru'
-    self.class.perform_later wait: run_every # re-queue
+    
+    self.class.perform_later wait: args[:each_minute].minute # re-queue
   end
 end
