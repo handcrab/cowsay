@@ -1,6 +1,4 @@
 %h1 Recent messages from the Cow
 = link_to 'Poke the cow', messages_poke_path, method: :post
 %p.messages
-  - @messages.each do |message|
-    %p.message
-      %code= message.body
+  = render @messages

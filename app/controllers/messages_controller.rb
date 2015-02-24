@@ -12,9 +12,7 @@ class MessagesController < ApplicationController
     # Rails.queue.push reviews_search
     # Rails.queue.push(CowsayJob.new(user))
     redirect_to root_path, notice: 'Cow at work...'
-  end
-
-
+  end  
 
   def broadcasting
     response.headers['Content-Type'] = 'text/event-stream'
